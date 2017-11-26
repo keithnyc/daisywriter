@@ -1,6 +1,6 @@
 Daisy Writer is a fast, efficient terminal editor written using Go. 
 
-*** Usage ***
+### Usage ###
 
 Daisy Writer doesn't have a full menu system yet, so make sure you open existing files
 by passing the file name from the command line (e.g. daisy mydoc.txt). If the file doesn't
@@ -8,7 +8,7 @@ exist, it will be created.
 
 Ctrl+S to save. Ctrl+Q to exit.
 
-*** Work In Progress ***
+### Work In Progress ###
 
 Daisy Writer is still in development and not really ready for prime time. 
 
@@ -17,7 +17,7 @@ I'm not responsible :)
 
 Pull requests are appreciated. 
 
-*** Inspiration ***
+### Inspiration ###
 
 I'm not a big fan of nano and while I love vim, I wanted something a little more akin
 to a word processor than what vim offers. I really love wordgrinder but just find it a bit
