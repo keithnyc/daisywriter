@@ -1,5 +1,7 @@
 Daisy Writer is a fast, efficient terminal editor written using Go. 
 
+![Image of Daisy Writer](https://i.imgur.com/cg6dMkJ.png)
+
 ### Usage ###
 
 Daisy Writer doesn't have a full menu system yet, so make sure you open existing files
