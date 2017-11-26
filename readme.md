@@ -37,6 +37,10 @@ too buggy on FreeBSD, but that was really the closest thing I was aiming for.
 The name Daisy Writer is named for my persian cat. She watches me write and she's really
 small, yet full featured. So yeah, seemed like a good idea.
 
+
+![Daisy-the-kitteh](https://i.imgur.com/AwGKRSt.png)
+
+
 ## Thanks ##
 
 A big thank you to antirez for his most excellent tutorial on writing your own editor in C. His 
@@ -52,6 +56,7 @@ https://github.com/jroimartin/gocui
 
 Pody:
 https://github.com/JulienBreux/pody
+
 
 
 
