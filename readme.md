@@ -10,6 +10,8 @@ exist, it will be created.
 
 Ctrl+S to save. Ctrl+Q to exit.
 
+Note: Make sure your terminal emulator is set to unicode.
+
 ### Work In Progress ###
 
 Daisy Writer is still in development and not really ready for prime time. 
