@@ -9,9 +9,13 @@ by passing the file name from the command line (e.g. daisy mydoc.txt). If the fi
 exist, it will be created.
 
 #### Key Bindings ####
-Ctrl+S = Save
-Ctrl+Q = Exit
-Ctrl+W = Toggle Line Wrap
+
+Action  | Key Combination
+------- | ---------------
+Ctrl+S  | Save
+Ctrl+Q  | Quit (immediate)
+Ctrl+W  | Toggle Line Wrap
+
 
 Note: Make sure your terminal emulator is set to unicode.
 
@@ -48,5 +52,6 @@ https://github.com/jroimartin/gocui
 
 Pody:
 https://github.com/JulienBreux/pody
+
 
 
