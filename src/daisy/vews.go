@@ -129,7 +129,7 @@ func viewStatusBar(g *gocui.Gui, lMaxX int, lMaxY int) error {
 
 // Status Bar
 func statusBarText(g *gocui.Gui)  {
-	lMaxX, _ := g.Size()
+	//lMaxX, _ := g.Size()
 	v, err := g.View("status")
 	editView, err := g.View("main")
 	
@@ -146,13 +146,12 @@ func statusBarText(g *gocui.Gui)  {
 							 strings.Count(editView.Buffer(), "\n")) 
 	
 	v.Clear()
-	i := lMaxX + 1
-	b := "  "
-	b = b + frameText("F1") + " FILE   "
-	b = b + frameText("F2") + " EDIT   "
-	b = b + frameText("F3") + " UTIL   "
-	b = b + frameText("F4") + " VIEW   "
-	b = b + frameText("^Q") + " EXIT"
+	i := 5
+	b := " "
+	b = b + frameText("^S")+ " SAVE   "
+	b = b + frameText("^Q") +" QUIT   "
+	b = b + frameText("^W") +" WRAP   "
+	
 	
 	var curText = pad.Left(str, len(str) - len(b), "X") 
 	var statText = pad.Left(b, i, " ")+ " " + curText
