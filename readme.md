@@ -10,11 +10,11 @@ exist, it will be created.
 
 #### Key Bindings ####
 
-Action  | Key Combination
-------- | ---------------
-Ctrl+S  | Save
-Ctrl+Q  | Quit (immediate)
-Ctrl+W  | Toggle Line Wrap
+Action              | Key Combination
+------------------- | ---------------
+Save                | Ctrl+S
+Quit (immediate)    | Ctrl+Q
+Toggle Line Wrap    | Ctrl+W
 
 
 Note: Make sure your terminal emulator is set to unicode.
@@ -52,6 +52,7 @@ https://github.com/jroimartin/gocui
 
 Pody:
 https://github.com/JulienBreux/pody
+
 
 
 
