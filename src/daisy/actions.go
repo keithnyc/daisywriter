@@ -4,7 +4,6 @@ import (
 	"io"
 	"io/ioutil"
 	"strings"
-	//"fmt"
 	"github.com/jroimartin/gocui"
 )
 
@@ -30,9 +29,7 @@ func actionEnd(g *gocui.Gui, v *gocui.View) error {
 		cy = cy + 1
 	} 
 	
-	//fmt.Printf("\n\nlen:%d pos:%d", len(linestr), pos)
 	v.SetCursor(cx, cy)
-	//v.MoveCursor(len(linestr), cy, false)
 	return nil
 }
 

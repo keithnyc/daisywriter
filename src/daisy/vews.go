@@ -152,7 +152,7 @@ func statusBarText(g *gocui.Gui)  {
 	b = b + frameText("F2") + " EDIT   "
 	b = b + frameText("F3") + " UTIL   "
 	b = b + frameText("F4") + " VIEW   "
-	b = b + frameText("^C") + " EXIT"
+	b = b + frameText("^Q") + " EXIT"
 	
 	var curText = pad.Left(str, len(str) - len(b), "X") 
 	var statText = pad.Left(b, i, " ")+ " " + curText
