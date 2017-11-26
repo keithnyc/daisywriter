@@ -7,6 +7,10 @@ import (
 	"github.com/jroimartin/gocui"
 )
 
+func actionToggleWrap(g *gocui.Gui, v *gocui.View) error{
+	v.Wrap = !(v.Wrap)
+	return nil
+}
 func actionTab(g *gocui.Gui, v *gocui.View) error {
 	v.EditWrite(' ')
 	v.EditWrite(' ')

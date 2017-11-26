@@ -19,6 +19,7 @@ var keys []Key = []Key{
 	Key{"", gocui.KeyEnd, actionEnd},
 	Key{"", gocui.KeyHome, actionHome},
 	Key{"", gocui.KeyTab, actionTab},
+	Key{"", gocui.KeyCtrlW, actionToggleWrap},
 }
 
 var currentFilePath = ""

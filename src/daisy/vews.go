@@ -141,7 +141,7 @@ func statusBarText(g *gocui.Gui)  {
 	cx, cy := editView.Cursor()
 	
 	var str = ""
-	str = fmt.Sprintf("| col:%d | ln:%d | lines:%d |",
+	str = fmt.Sprintf("| col:%d | row:%d | lines:%d |",
 							 cx+1, cy+1, 
 							 strings.Count(editView.Buffer(), "\n")) 
 	
