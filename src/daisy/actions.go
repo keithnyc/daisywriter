@@ -4,6 +4,7 @@ import (
 	"io"
 	"io/ioutil"
 	"strings"
+	//"fmt"
 	"github.com/jroimartin/gocui"
 )
 
@@ -16,9 +17,21 @@ func actionTab(g *gocui.Gui, v *gocui.View) error {
 	return nil
 }
 func actionEnd(g *gocui.Gui, v *gocui.View) error {
-	_, cy := v.Cursor()
+	maxX, _ := g.Size()
+	cx, cy := v.Cursor()
 	linestr, _ := v.Line(cy)
-	v.SetCursor(len(linestr), cy)
+	
+	var pos = 0
+	cx = len(linestr)
+	
+	if len(linestr) > maxX{
+		pos = len(linestr) - maxX
+		cx = pos + 2
+		cy = cy + 1
+	} 
+	
+	//fmt.Printf("\n\nlen:%d pos:%d", len(linestr), pos)
+	v.SetCursor(cx, cy)
 	//v.MoveCursor(len(linestr), cy, false)
 	return nil
 }
