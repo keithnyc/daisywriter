@@ -4,21 +4,21 @@ import (
 	"io"
 	"io/ioutil"
 	"strings"
+	"fmt"
 	"github.com/jroimartin/gocui"
 )
-
-
 
 func actionDeleteLine(g *gocui.Gui, v *gocui.View) error{
 	_, cy := v.Cursor()
 	maxX, _ := v.Size()
-	str, _ := v.Line(cy)
 	
 	actionEnd(g,v)
+	str, _ := v.Line(cy)
+	
 	i:=0
 	lstr := len(str)
-	
-	if !v.Wrap && lstr > maxX {
+	fmt.Println(lstr)
+	if !v.Wrap{
 		for i < maxX && i <= lstr{
 			v.EditDelete(true)
 			i++
@@ -29,8 +29,6 @@ func actionDeleteLine(g *gocui.Gui, v *gocui.View) error{
 			i++
 		}	
 	}
-	
-	
 	
 	return nil
 }
@@ -48,7 +46,6 @@ func actionTab(g *gocui.Gui, v *gocui.View) error {
 	return nil
 }
 func actionEnd(g *gocui.Gui, v *gocui.View) error {
-	
 	maxX, _ := v.Size()
 	cx, cy := v.Cursor()
 	linestr, _ := v.Line(cy)
@@ -59,8 +56,14 @@ func actionEnd(g *gocui.Gui, v *gocui.View) error {
 		if v.Wrap{
 			actionHome(g,v)
 			wraplines := (lstr / maxX)
+			
+			if wraplines < 2{
+				wraplines = 2
+			}
+			
+			fmt.Println(wraplines)
 			origPos := cy
-			cy = (cy + wraplines) - (origPos - wraplines) - 1
+			cy = ((cy + wraplines)) - (origPos - wraplines) - 1
 			lbxpos := (lstr % maxX) - 2
 			cx = lbxpos
 		}else{
