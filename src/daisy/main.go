@@ -20,6 +20,7 @@ var keys []Key = []Key{
 	Key{"", gocui.KeyHome, actionHome},
 	Key{"", gocui.KeyTab, actionTab},
 	Key{"", gocui.KeyCtrlW, actionToggleWrap},
+	Key{"", gocui.KeyCtrlD, actionDeleteLine},
 }
 
 var currentFilePath = ""

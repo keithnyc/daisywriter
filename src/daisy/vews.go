@@ -146,11 +146,13 @@ func statusBarText(g *gocui.Gui)  {
 							 strings.Count(editView.Buffer(), "\n")) 
 	
 	v.Clear()
-	i := 5
+	i := 2
 	b := " "
 	b = b + frameText("^S")+ " SAVE   "
 	b = b + frameText("^Q") +" QUIT   "
 	b = b + frameText("^W") +" WRAP   "
+	b = b + frameText("^H") +" TOP   "
+	b = b + frameText("^D") +" DEL-LN   "
 	
 	
 	var curText = pad.Left(str, len(str) - len(b), "X") 

@@ -7,6 +7,34 @@ import (
 	"github.com/jroimartin/gocui"
 )
 
+
+
+func actionDeleteLine(g *gocui.Gui, v *gocui.View) error{
+	_, cy := v.Cursor()
+	maxX, _ := v.Size()
+	str, _ := v.Line(cy)
+	
+	actionEnd(g,v)
+	i:=0
+	lstr := len(str)
+	
+	if !v.Wrap && lstr > maxX {
+		for i < maxX && i <= lstr{
+			v.EditDelete(true)
+			i++
+		}
+	}else{
+		for i <= lstr{
+			v.EditDelete(true)	
+			i++
+		}	
+	}
+	
+	
+	
+	return nil
+}
+
 func actionToggleWrap(g *gocui.Gui, v *gocui.View) error{
 	v.Wrap = !(v.Wrap)
 	return nil
@@ -20,17 +48,26 @@ func actionTab(g *gocui.Gui, v *gocui.View) error {
 	return nil
 }
 func actionEnd(g *gocui.Gui, v *gocui.View) error {
-	maxX, _ := g.Size()
+	
+	maxX, _ := v.Size()
 	cx, cy := v.Cursor()
 	linestr, _ := v.Line(cy)
 	
-	var pos = 0
-	cx = len(linestr)
+	lstr := len(linestr)
 	
 	if len(linestr) > maxX{
-		pos = len(linestr) - maxX
-		cx = pos + 2
-		cy = cy + 1
+		if v.Wrap{
+			actionHome(g,v)
+			wraplines := (lstr / maxX)
+			origPos := cy
+			cy = (cy + wraplines) - (origPos - wraplines) - 1
+			lbxpos := (lstr % maxX) - 2
+			cx = lbxpos
+		}else{
+			cx = maxX -1
+		}
+	}else{
+		cx = lstr
 	} 
 	
 	v.SetCursor(cx, cy)
@@ -160,6 +197,8 @@ func actionCursorDown(g *gocui.Gui, v *gocui.View) error {
 			}
 		}
 	}
+	
+	actionHome(g, v)
 	return nil
 }
 
